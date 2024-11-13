@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenLayers Feature Modification</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" type="text/css">
+  <style>
+    #map {
+      width: 100%;
+      height: 500px;
+    }
+    .controls {
+      margin-top: 10px;
+    }
+    .controls button {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <div class="controls">
+    <button id="addFeatureBtn">Add Feature</button>
+    <button id="removeFeatureBtn">Remove Selected Feature</button>
+    <button id="modifyFeatureBtn">Modify Feature</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+  <script type="module">
+    import { addFeature, removeSelectedFeature, modifyFeatureAttributes } from './main.js'; // Import functions
+
+    // Event listeners for buttons
+    document.getElementById('addFeatureBtn').addEventListener('click', addFeature);
+    
+    // Remove selected feature when the button is clicked
+    document.getElementById('removeFeatureBtn').addEventListener('click', removeSelectedFeature);
+    
+    // Modify the selected feature's attributes
+    document.getElementById('modifyFeatureBtn').addEventListener('click', function() {
+      modifyFeatureAttributes({
+        name: 'Updated Feature',
+        description: 'Updated feature description',
+        newProperty: 'New value',
+      });
+    });
+  </script>
+</body>
+</html>

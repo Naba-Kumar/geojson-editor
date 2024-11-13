@@ -1,0 +1,16 @@
+{
+  "name": "modify",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "modify": "file:",
+    "ol": "latest"
+  }
+}
